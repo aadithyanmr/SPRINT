@@ -1,0 +1,44 @@
+3 start
+
+fact:3
+res:1
+
+adder:0
+two:2
+one:1
+zero:0
+count:0
+fact_cpy:0
+
+start:7 fact fact_cpy
+
+5 fact two halt
+
+7 fact_cpy res
+7 fact_cpy adder
+
+
+2 fact_cpy one fact_cpy
+out_loop:7 fact_cpy count
+
+in_loop:5 count two yes
+1 res adder res
+2 count one count
+
+3 in_loop
+
+yes:7 res adder
+2 fact_cpy one fact_cpy
+
+4 fact_cpy zero halt
+3 out_loop
+
+
+
+
+
+
+
+
+
+halt:9
