@@ -1,0 +1,28 @@
+3 start
+
+first_e
+length:1
+target:2
+
+result:0
+
+start:7 first_e address
+
+loop:5 counter length true
+3 halt
+
+true:4 address:0 target yes
+
+1 address one address
+1 counter one counter
+3 loop
+
+yes:7 one result
+3 halt
+
+
+counter:0
+one:1
+
+halt:9
+first_e:
