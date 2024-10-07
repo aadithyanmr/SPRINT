@@ -1,0 +1,49 @@
+3 6
+
+first_element_location:100
+length:5
+result:2
+
+3 assgn
+one:1
+two:2
+temp_storage:0
+diff:0
+last_element_location:0
+no_element:0
+
+
+assgn:
+7 length no_element
+2 length one diff
+5 no_element two halt
+1 first_element_location diff last_element_location
+
+loop:5 no_element two halt
+
+7 first_element_location first_element_location* 
+ 
+7 last_element_location last_element_location*
+
+
+4 first_element_location*:0
+last_element_location*:0 inc
+
+copy:7 one result
+
+3 halt
+
+
+inc:1 first_element_location one first_element_location
+
+2 last_element_location one last_element_location
+
+2 no_element two no_element 
+
+3 loop
+
+
+
+
+
+halt:9
