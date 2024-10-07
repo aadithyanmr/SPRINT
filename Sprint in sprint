@@ -1,1 +1,116 @@
+3 loop
+strt:code
+start:0
+pointer:code
+temp_jump:0
+temp_equal:0
+cell_loc:0
 
+
+
+
+one:1
+two:2
+three:3
+four:4
+five:5
+
+jump:3
+stop:9
+copy:7
+add:1
+sub:2
+eq:4
+less:5
+zero:0
+
+
+
+loop:2 strt one start
+7 pointer pointer_stop
+7 pointer pointer_jump
+7 pointer pointer_copy
+7 pointer pointer_add
+7 pointer pointer_sub
+7 pointer pointer_eq
+7 pointer pointer_less
+7 pointer pointer_zero
+
+4 pointer_stop:0 stop
+halt
+4 pointer_jump:0 jump jump_instructions
+4 pointer_copy:0 copy copy_instructions
+4 pointer_add:0 add
+add_instructions
+4 pointer_sub:0 sub
+sub_instructions
+4 pointer_eq:0 eq eq_instructions
+4 pointer_less:0 less less_instructions
+4 pointer_zero:0 zero
+zero_instructions
+
+3 halt
+
+jump_instructions:1 pointer_stop one
+next
+1 pointer_stop next:0
+temp_jump
+2 temp_jump one pointer
+3 loop
+
+copy_instructions:1 pointer_copy one from_loc
+1 two pointer_copy to_loc
+1 start from_loc:0 from
+1 start to_loc:0 to
+7 from:0 to:0
+1 pointer three pointer 
+3 loop
+
+add_instructions:1 pointer_add one addend_loc
+1 pointer_add two augend_loc
+1 pointer_add three added_loc
+1 start addend_loc:0 addend
+1 start augend_loc:0 augent
+1 start added_loc:0 added
+1 addend:0 augent:0 added:0
+1 pointer four pointer
+3 loop
+
+sub_instructions:1 pointer_add one subtrahend_loc
+1 pointer_add two minuend_loc
+1 pointer_add three subtracted_loc
+1 start subtrahend_loc:0 subtrahend
+1 start minuend_loc:0 minuend
+1 start subtracted_loc:0 subtracted
+2 subtrahend:0 minuend:0 subtracted:0
+1 pointer four pointer
+3 loop
+
+eq_instructions:7 four eq1
+3 eq_start
+
+less_instructions:7 five eq1
+
+ 
+eq_start:1 pointer_eq one check1_loc
+1 pointer_eq two check2_loc
+1 pointer_eq three eq_loc
+1 start check1_loc:0 check1
+1 start check2_loc:0 check2
+1 start eq_loc:0 temp_equal
+eq1:0 check1:0 check2:0 yes
+1 pointer four pointer
+3 loop
+yes:7 temp_equal pointer
+3 loop
+
+zero_instructions:1 pointer_zero one value_loc
+1 pointer_zero two cell
+7 cell:0 cell_loc
+1 start cell_loc put_cell
+7 value_loc:0 put_cell:0
+1 pointer three pointer
+3 loop
+
+halt:9
+code:
