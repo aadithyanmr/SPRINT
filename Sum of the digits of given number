@@ -1,0 +1,31 @@
+3 start
+
+number:123
+result:0
+
+ten:10
+counter:0
+rem:0
+zero:0
+one:1
+
+start:7 number rem
+
+out_loop:
+
+in_loop:2 rem ten rem
+
+5 rem ten yes
+1 counter one counter
+
+3 in_loop
+
+yes:5 counter zero yes1
+
+1 rem result result
+
+3 out_loop
+
+yes1:7 number result
+
+halt:9
