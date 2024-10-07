@@ -1,0 +1,28 @@
+3 start
+
+number:39
+rev_num:0
+counter:0
+counter_cpy:0
+number_cpy:0
+ten:10
+one:1
+zero:0
+
+start:7 number number_cpy
+
+loop:2 number_cpy ten number_cpy
+1 counter one counter
+
+5 number_cpy ten yes
+3 loop
+
+yes:7 number_cpy counter_cpy
+loop_2:1 rev_num ten rev_num
+2 counter_cpy one counter_cpy
+4 counter_cpy zero yes2
+3 
+
+yes2:1 number_cpy rev_num rev_num
+
+halt:9 
