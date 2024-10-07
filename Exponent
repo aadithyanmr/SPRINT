@@ -1,0 +1,31 @@
+3 start 
+base:3 exp:1
+res:0 
+start:3 13 
+one:1 adder:0 count:0 exp_cnt:0 zero:0 
+
+
+7 base res
+7 exp exp_cnt
+
+4 exp one halt
+4 exp zero copyhalt
+
+7 base adder
+2 exp_cnt one exp_cnt
+
+out_loop:7 base count
+
+iseq:4 count one yes
+
+1 res adder res
+2 count one count
+3 iseq
+
+yes:7 res adder
+2 exp_cnt one exp_cnt
+
+4 exp_cnt zero halt
+3 out_loop
+
+copyhalt:7 one res
